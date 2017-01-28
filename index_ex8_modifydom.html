@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>d3v4 test</title>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <style>
+      div { display: inline-block; background-color: yellow;}
+      a {display: block;}
+      .red { color: red; }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="#">About</a>
+      <a href="#">Products</a>
+      <a href="#">Contact</a>
+    </div>
+    <a class="action" href="#">Buy Now</a>
+
+    <!-- <script src="src/app.js"></script> -->
+
+    <script>
+    // we are modifying dom elements with d3 in this exercise
+    d3.selectAll('a:nth-child(2)')
+      // how to add an attribute to a selection
+      .attr('href', 'http://google.com')
+      // adding CSS to a selection
+      .classed('red', true)
+      // changing the text in a selection
+      // .text('inventory')
+      // replacing text with HTML text on a selection
+      .html('Inventory <b>SALE</b>');
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>d3v4 test</title>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <style>
+      div { display: inline-block; background-color: yellow;}
+      a {display: block;}
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="#">About</a>
+      <a href="#">Products</a>
+      <a href="#">Contact</a>
+    </div>
+    <a class="action" href="#">Buy Now</a>
+
+    <!-- <script src="src/app.js"></script> -->
+    <script>
+      // .select allows you to grab a single element
+      var div = d3.select('div');
+      console.log(div.nodes());
+
+      // we chain this with .selectAll to grab elements within a selection
+      var divLinks = div.selectAll('a');
+      console.log(divLinks.nodes());
+
+      // you can combine the two using CSS
+      var divLinksCSS = d3.selectAll('div a');
+      console.log(divLinksCSS.nodes());
+
+      // you can also just select elements based on the class
+      var actionLink = d3.selectAll('.action');
+      console.log(actionLink.nodes());
+
+      // you can also use other CSS selectors like nth-child
+      var secondLink = d3.selectAll('a:nth-child(2)');
+      console.log(secondLink.nodes());
+
+      // this shows how many links are on the page
+      var allLinks = d3.selectAll(document.links);
+      console.log(allLinks.size());
+    </script>
+
+  </body>
+</html>

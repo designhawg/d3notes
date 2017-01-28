@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>d3v4 test</title>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <style>
+      div { display: inline-block; background-color: yellow;}
+      a {display: block;}
+      .red { color: red; }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="#">About</a>
+      <a href="#">Products</a>
+      <a href="#">Contact</a>
+    </div>
+    <a class="action" href="#">Buy Now</a>
+
+    <!-- <script src="src/app.js"></script> -->
+
+    <script>
+    // we are creating dom elements with d3 in this exercise
+    d3.select('.title')
+      // here we have added a button to the bottom of the title class
+      // .append('button')
+      // similar to append, but insert can set where it appears
+      // .insert('button', 'a:nth-child(2)')
+      .append('div')
+        // this colors the selection red
+        .style('color', 'red')
+        // added HTML inside the button, hence the indent
+        .html('Inventory<b>SALE</b>')
+      // pay attention to the indention tree in d3
+      .append('button')
+        .style('display', 'block')
+        .text('submit');
+
+    // this removes items from the DOM
+    // d3.select('.action').remove();
+
+
+    </script>
+
+  </body>
+</html>
